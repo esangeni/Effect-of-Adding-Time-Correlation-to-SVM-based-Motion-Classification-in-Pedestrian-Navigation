@@ -1,0 +1,28 @@
+## Instructions for Traning and Testing the SVM Classifier:
+
+Once the datasets are labeled, you can proceed with training and testing the standard SVM classifier by following these steps:
+
+1. **Run `00_Creation_6sig_df.ipynb`**  
+   This Jupyter Notebook creates the training and test datasets for the standard SVM classifier.
+
+2. **Run `01_Remove_bias_df.ipynb`**  
+   This notebook removes bias from the training and test datasets for the standard SVM classifier.
+
+3. **Run `02_mix_6sig_train_cls.ipynb`**  
+   This notebook trains the standard SVM classifier using a vector of 6 IMU signals (3x Accelerometer + 3x Gyroscope) with their respective labels.
+
+4. **Run `03_mix_6sig_test_cls.ipynb`**  
+   This notebook tests the standard SVM classifier and provides the Confusion Matrices (CFM) and parameters such as accuracy, etc.
+
+## Instructions for Getting the Label Predictions for the Navigation Solutions Datasets:
+
+For testing the navigation solutions, we use the pretrained standard SVM classifier for prediction of the labels at each instance of time. Hence, the order of how to run the codes is a little bit different:
+
+1.
+
+
+### Additional Notes
+
+- Ensure that all necessary dependencies and libraries are installed before running the notebooks.
+- Each notebook should be run in sequence to ensure the proper flow of data and processing.
+- For any issues or more detailed instructions, refer to the comments within each notebook or contact the repository maintainer.

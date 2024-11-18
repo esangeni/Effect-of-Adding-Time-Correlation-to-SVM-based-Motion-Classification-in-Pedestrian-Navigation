@@ -1,0 +1,72 @@
+Results:
+--------
+19 Activities: [Zupt, Zupt Walk 60, Walk 60, Zupt Walk 90, Walk 90, Zupt Jogg 120, Jogg 120, Zupt Run 150, Run 150, Zupt Sprint 180, Sprint 180, Zupt Walk Back 60, Walk Back 60, Zupt Walk Back 90, Walk Back 90, Zupt Side Right 90, Side Right 90, Zupt Side Left 90, Side Left 90]
+
+10 Activities: [Zupt, Walk 60, Walk 90,Jogg 120, Run 150, Sprint 180, Walk Back 60, Walk Back 90, Side Right 90, Side Left 90] combining swing and stationary phases of each activity.
+
+7 Activities: [Zupt, Walk, Jogg 120, Run 150, Sprint 180, Walk Back, Side Stepping] combining swing and stationary phases of each activity and walk activities, walking backwards and side stepping together.
+
+
+Parameters Dataset: Window Size 100, #PCA 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Datasets (2022/03/17) - Subject I (Chico):
+	- If classifiying 19 activities 88.44%
+	- If classifiying 10 activities 85.69%
+	- If classifiying  7 activities 91.30%
+* Datasets (2022/07/27) - Subject II (Eudald):
+	- If classifiying 19 activities 71.33%
+	- If classifiying 10 activities 73.40%
+	- If classifiying  7 activities 82.23%
+* Datasets (2022/08/01) - Subject III (Austin):
+	- If classifiying 19 activities 72.30%
+	- If classifiying 10 activities 75.81%
+	- If classifiying  7 activities 86.20%
+
+Parameters Dataset: Window Size 100, #PCA 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Datasets (2022/03/17) - Subject I (Chico):
+	- If classifiying 19 activities 85.56%
+	- If classifiying 10 activities 86.95%
+	- If classifiying  7 activities 92.1%
+* Datasets (2022/07/27) - Subject II (Eudald):
+	- If classifiying 19 activities 71.94%
+	- If classifiying 10 activities 74.23%
+	- If classifiying  7 activities 82.57%
+* Datasets (2022/08/01) - Subject III (Austin):
+	- If classifiying 19 activities 74.18%
+	- If classifiying 10 activities 77.54%
+	- If classifiying  7 activities 87.34%
+
+Parameters Dataset: Window Size 100, #PCA 6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Datasets (2022/03/17) - Subject I (Chico):
+	- If classifiying 19 activities 85.72%
+	- If classifiying 10 activities 87.06%
+	- If classifiying  7 activities 91.85%
+* Datasets (2022/07/27) - Subject II (Eudald):
+	- If classifiying 19 activities 71.77%
+	- If classifiying 10 activities 73.98%
+	- If classifiying  7 activities 82.27%
+* Datasets (2022/08/01) - Subject III (Austin):
+	- If classifiying 19 activities 73.90%
+	- If classifiying 10 activities 77.16%
+	- If classifiying  7 activities 87.24%
+
+Parameters Dataset: Window Size 100, #PCA 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Datasets (2022/03/17) - Subject I (Chico):
+	- If classifiying 19 activities 85.51%
+	- If classifiying 10 activities 86.88%
+	- If classifiying  7 activities 91.67%
+* Datasets (2022/07/27) - Subject II (Eudald):
+	- If classifiying 19 activities 71.57%
+	- If classifiying 10 activities 73.83%
+	- If classifiying  7 activities 82.00%
+* Datasets (2022/08/01) - Subject III (Austin):
+	- If classifiying 19 activities 73.90%
+	- If classifiying 10 activities 77.25%
+	- If classifiying  7 activities 87.13%
