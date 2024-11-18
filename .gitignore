@@ -3,9 +3,9 @@ Motion Classification/1_unlabeled_datasets/2022_03_17/*
 Motion Classification/1_unlabeled_datasets/2022_04_25/*
 Motion Classification/1_unlabeled_datasets/2022_07_27/*
 Motion Classification/1_unlabeled_datasets/2022_08_01/*
-Motion Classification/1_unlabeled_datasets/2022_08_23/*
-Motion Classification/1_unlabeled_datasets/2022_08_30/*
-Motion Classification/1_unlabeled_datasets/2022_09_07/*
+Motion Classification/1_unlabeled_datasets/2023_08_23/*
+Motion Classification/1_unlabeled_datasets/2023_08_30/*
+Motion Classification/1_unlabeled_datasets/2023_09_07/*
 Motion Classification/2_labeled_datasets/2022_03_17/*
 Motion Classification/2_labeled_datasets/2022_04_25/*
 Motion Classification/2_labeled_datasets/2022_07_27/*
@@ -14,17 +14,17 @@ Motion Classification/3_Standard_SVM/datasets/2022_03_17/*
 Motion Classification/3_Standard_SVM/datasets/2022_04_25/*
 Motion Classification/3_Standard_SVM/datasets/2022_07_27/*
 Motion Classification/3_Standard_SVM/datasets/2022_08_01/*
-Motion Classification/3_Standard_SVM/datasets/2022_08_23/*
-Motion Classification/3_Standard_SVM/datasets/2022_08_30/*
-Motion Classification/3_Standard_SVM/datasets/2022_09_07/*
+Motion Classification/3_Standard_SVM/datasets/2023_08_23/*
+Motion Classification/3_Standard_SVM/datasets/2023_08_30/*
+Motion Classification/3_Standard_SVM/datasets/2023_09_07/*
 
 # Allow the subfolders themselves
 !Motion Classification/1_unlabeled_datasets/2022_03_17/
 !Motion Classification/1_unlabeled_datasets/2022_04_25/
 !Motion Classification/1_unlabeled_datasets/2022_07_27/
 !Motion Classification/1_unlabeled_datasets/2022_08_01/
-!Motion Classification/1_unlabeled_datasets/2022_08_23/
-!Motion Classification/1_unlabeled_datasets/2022_08_30/
+!Motion Classification/1_unlabeled_datasets/2023_08_23/
+!Motion Classification/1_unlabeled_datasets/2023_08_30/
 !Motion Classification/1_unlabeled_datasets/2022_09_07/
 !Motion Classification/2_labeled_datasets/2022_03_17/
 !Motion Classification/2_labeled_datasets/2022_04_25/
@@ -34,6 +34,6 @@ Motion Classification/3_Standard_SVM/datasets/2022_09_07/*
 !Motion Classification/3_Standard_SVM/datasets/2022_04_25/
 !Motion Classification/3_Standard_SVM/datasets/2022_07_27/
 !Motion Classification/3_Standard_SVM/datasets/2022_08_01/
-!Motion Classification/3_Standard_SVM/datasets/2022_08_23/
-!Motion Classification/3_Standard_SVM/datasets/2022_08_30/
-!Motion Classification/3_Standard_SVM/datasets/2022_09_07/
+!Motion Classification/3_Standard_SVM/datasets/2023_08_23/
+!Motion Classification/3_Standard_SVM/datasets/2023_08_30/
+!Motion Classification/3_Standard_SVM/datasets/2023_09_07/
