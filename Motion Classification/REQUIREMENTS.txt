@@ -5,3 +5,5 @@ plotly
 sklearn
 seaborn
 tqdm
+pickle
+imblearn

@@ -1,7 +1,9 @@
 # Ignore all files inside these subfolders
 Motion Classification/1_unlabeled_datasets/*
 Motion Classification/2_labeled_datasets/*
+Motion Classification/3_Standard_SVM/datasets/*
 
 # Allow the subfolders themselves
 !Motion Classification/1_unlabeled_datasets/
 !Motion Classification/2_labeled_datasets/
+!Motion Classification/3_Standard_SVM/datasets/
