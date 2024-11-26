@@ -25,13 +25,14 @@ set(0,'DefaultLegendInterpreter','latex');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Parameters to select
-subject = 'I'; % I, II, III
-data_filename = 'exp100'; % exp100, exp200, exp300, ... exp1000
+subject = 'III'; % I, II, III
+data_filename = 'exp1200'; % exp100, exp200, exp300, ... exp1000
 typeClassifier = 'timeSeriesSVM'; % standardSVM or timeSeriesSVM
 
-standaloneSVMdetector_switch = 0; % Switch to use ZUPT-SVM
-svm_SHOEdetector_switch = 1; % Swtich to use ZUPT-SVM-SHOE
-% If both switches == 0 -> ZUPT-SHOE algorithm
+zupt = 0; % ZUPT switch 1 is on, 0 Inertial Navigation (0-1)
+standaloneSVMdetector_switch = 0; % Switch to use ZUPT-SVM (0-1), zupt has to be 1
+svm_SHOEdetector_switch = 0; % Swtich to use ZUPT-SVM-SHOE (0-1), zupt has to be 1
+% If zupt = 1 && both switches == 0 -> ZUPT-SHOE algorithm
 
 % Remember to Navigate to the:
 % "lib\Activities_Classification_lib\ZUPTwithMotionClassification"
@@ -66,7 +67,7 @@ addpath(datasetDir);
 load([data_filename '_VN.mat']);
 
 % Load SVM predictions depending on the type of classifier:
-if typeClassifier == "standardSVM"
+if typeClassifier == "standardSVM" || zupt == 1
     if subject == "I" && (data_filename == "exp100" || data_filename == "exp200" || data_filename == "exp300" || data_filename == "exp400" || data_filename == "exp500")
         load([data_filename '_SVM.mat']); % For Journal Paper simple SVM clf
     else
@@ -77,7 +78,7 @@ if typeClassifier == "standardSVM"
     svm_window = 1; % Simple SVM
 end
 
-if typeClassifier == "timeSeriesSVM"
+if typeClassifier == "timeSeriesSVM" || zupt == 1
     if subject == "I" && (data_filename == "exp100" || data_filename == "exp200" || data_filename == "exp300" || data_filename == "exp400" || data_filename == "exp500")
         load([data_filename '_SVM_HD400.mat']); % For Journal Paper time series SVM clf just for the first 3 datasets of the 2023_09_07 folder
     else
@@ -87,6 +88,18 @@ if typeClassifier == "timeSeriesSVM"
 %     load([data_filename '_SVM_HD400.mat']); % For Journal Paper time series SVM clf just for the first 3 datasets of the 2023_09_07 folder
 
     svm_window = 400; % Window Size: 400 HD
+end
+
+if zupt == 0
+    zupt = zupt + 20; % higher than the number of classes is ok, just to not interfere with the rest of the code.
+    if subject == "I" && (data_filename == "exp100" || data_filename == "exp200" || data_filename == "exp300" || data_filename == "exp400" || data_filename == "exp500")
+        load([data_filename '_SVM.mat']); % For Journal Paper simple SVM clf
+    else
+        data = load([data_filename '_SVM.mat']); % For Journal Paper time series SVM clf
+        svm_results = data.([data_filename '_SVM']);
+    end
+
+    svm_window = 1; % Simple SVM
 end
 
 if svm_window == 400
@@ -120,21 +133,12 @@ if_variance = if_recontructed;
 m = 1;  % Number of averaging of raw data to adjust sampling rate.
 cal = 3*IMU_dt; % Number of initial time steps for calibration
 
-stdsvm_SHOEdetector_switch = 0; % swtich to use STDSVM-aided SHOE detector
-
-if stdsvm_SHOEdetector_switch==1
-    w_cfm = load(['2022_04_25_cfm_rbf_C100_6sig_df_Chico_v2.csv']);    
-end
-
-zupt = 1; % ZUPT switch 1 is on, 10 is off
-
 % Averaging the data
 for i = 1:m:length(u)-m
     for j = 1:6
         v(j, (i-1)/m+1) = mean(u(j, i:i+m-1));
     end
 end
-
 
 % gravity
 a     = 6378137;               % m ( semi-major axis)
@@ -382,8 +386,8 @@ for i=cal+1:length(est.t)
     H = [];
     R = [];
 
-    if ((zupt_l(i) == zupt)&&standaloneSVMdetector_switch~=1 ...
-            || standaloneSVMdetector_switch==1 && (svm_results(9,i) <= 9)) % SVM detection results
+    if ((zupt_l(i) == zupt) && standaloneSVMdetector_switch~=1 ...
+            || standaloneSVMdetector_switch == 1 && (svm_results(9,i) <= 9)) % SVM detection results
         
         z = [z;input.v_nWrtE_n - stance_velocity];
         H = [H;H_ZUPT];
